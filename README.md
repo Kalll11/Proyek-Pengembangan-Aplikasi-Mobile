@@ -29,9 +29,9 @@
 | <img src="https://github.com/user-attachments/assets/73e93f3e-577e-465a-b0d0-245bb872399b" width="250" alt="Screenshot Add Task" /> | <img src="https://github.com/user-attachments/assets/243f2317-6448-4020-9389-1c1a7aef9f75" width="250" alt="Screenshot Task Detail" /> |
 | **Input tugas dengan validasi kuota *Do First*.** | **Melihat detail, mengedit, atau menghapus.** |
 
-| AI Task Breakdown (Pembaruan Sprint 3) | |
+| AI Task Breakdown | |
 | :---: | :---: |
-| *(Tambahkan link gambar screenshot fitur AI di sini)* | |
+| <img width="349" height="630" alt="Screenshot 2026-05-31 183441" src="https://github.com/user-attachments/assets/aca723f3-9d86-4b4d-b1f2-fb519e675100" /> | |
 | **Pemecahan otomatis sub-tugas dari Gemini AI.** | |
 
 ---
