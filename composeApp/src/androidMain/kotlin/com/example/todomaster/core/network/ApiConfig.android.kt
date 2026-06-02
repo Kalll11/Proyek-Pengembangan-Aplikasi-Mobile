@@ -15,5 +15,5 @@ import com.example.todomaster.BuildConfig
  */
 actual object ApiConfig {
 
-actual val geminiApiKey: String = "MASUKKAN_API_KEY_ANDA_DISINI"
+actual val geminiApiKey: String = "Masukkan_API_KEY_MILIKMU_DISINI"
 }

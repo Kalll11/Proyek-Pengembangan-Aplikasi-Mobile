@@ -96,6 +96,7 @@ kotlin {
             implementation(libs.koin.android)
             implementation(libs.ktor.client.okhttp)
             implementation(libs.sqldelight.android.driver)
+            implementation("androidx.work:work-runtime-ktx:2.9.0")
         }
         
         iosMain.dependencies {
