@@ -157,13 +157,12 @@ fun AddTaskScreen(
                                 val q = quadrants[j]
                                 val isSelected = viewModel.priority == q
 
-                                val qColor = when (q.name) {
-                                    "DO_FIRST" -> Color(0xFF195FA7)
-                                    "SCHEDULE" -> Color(0xFF1E7B5B)
-                                    "DELEGATE" -> Color(0xFF9C5B12)
-                                    else -> Color(0xFF6D6A65)
+                                val qColor = when (q) {
+                                    Quadrant.DO_FIRST -> com.example.todomaster.presentation.theme.ColorDoFirst
+                                    Quadrant.SCHEDULE -> com.example.todomaster.presentation.theme.ColorSchedule
+                                    Quadrant.DELEGATE -> com.example.todomaster.presentation.theme.ColorDelegate
+                                    Quadrant.DONT_DO -> com.example.todomaster.presentation.theme.ColorDontDo
                                 }
-
 
                                 val icon = when (q.name) {
                                     "DO_FIRST" -> androidx.compose.material.icons.Icons.Default.FlashOn

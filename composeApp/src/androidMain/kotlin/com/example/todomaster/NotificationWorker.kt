@@ -14,6 +14,7 @@ import kotlinx.coroutines.flow.firstOrNull
 import kotlinx.datetime.Clock
 import kotlinx.datetime.Instant
 import kotlinx.datetime.TimeZone
+import kotlinx.datetime.plus
 import kotlinx.datetime.toLocalDateTime
 import org.koin.core.component.KoinComponent
 import org.koin.core.component.inject
@@ -47,10 +48,10 @@ class NotificationWorker(
     private fun isDueTomorrow(dueDateMillis: Long?): Boolean {
         if (dueDateMillis == null) return false
 
-        val tomorrowMillis = Clock.System.now().toEpochMilliseconds() + (24 * 60 * 60 * 1000)
-        val tomorrow = Instant.fromEpochMilliseconds(tomorrowMillis).toLocalDateTime(TimeZone.currentSystemDefault()).date
-        val dueDate = Instant.fromEpochMilliseconds(dueDateMillis).toLocalDateTime(TimeZone.currentSystemDefault()).date
+        val today = Clock.System.now().toLocalDateTime(TimeZone.currentSystemDefault()).date
+        val tomorrow = today.plus(1, kotlinx.datetime.DateTimeUnit.DAY)
 
+        val dueDate = Instant.fromEpochMilliseconds(dueDateMillis).toLocalDateTime(TimeZone.currentSystemDefault()).date
         return tomorrow == dueDate
     }
 
