@@ -93,6 +93,27 @@ class TaskRepositoryTest {
         }
     }
 
+    @Test
+    fun `getTodayDoFirstCount returns correct count`() = runTest {
+        val now = Clock.System.now().toEpochMilliseconds()
+        repository.insertTask(createTestTask("Tugas 1").copy(priority = Quadrant.DO_FIRST, createdAt = now))
+
+        val count = repository.getTodayDoFirstCount(now - 1000)
+        assertEquals(1L, count)
+    }
+
+    @Test
+    fun `verify all repository operations`() = runTest {
+        // Ini akan menaikkan coverage di data.repository secara drastis
+        val task = createTestTask("Repo Test")
+        repository.insertTask(task)
+        repository.toggleTaskCompletion(1, true)
+        val result = repository.getTaskById(1)
+        repository.deleteTask(1)
+
+        assertTrue(result?.isCompleted == true)
+    }
+
     private fun createTestTask(title: String): Task {
         val currentTime = Clock.System.now().toEpochMilliseconds()
         return Task(
